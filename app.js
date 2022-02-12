@@ -11,28 +11,6 @@ app.use(express.static('public'))
 app.use(cors());
 dbConnection();
 
-//#region 
-
-// var arr = [ ["A", "T", "C", "G"],
-// ["A", "A", "A", "G"],
-// ["A", "T", "A", "T"],
-// ["A", "G", "G", "G"],
-// ["A", "C", "T", "A"],
-// ["A", "T", "C", "G"],
-// ["A", "A", "A", "G"],
-// ["A", "T", "A", "T"],
-// ["T", "G", "G", "T"],
-// ["T", "C", "T", "A"]
-// ]
-// var a= arr.join().replace(/,/g, '');
-
-
-// console.log(a);
-
-//#endregion
-
-
-
 
 
 
@@ -49,11 +27,9 @@ app.get('/huhu', (req, res) => {
     })
 })
 
-// app.listen(4000, () => {
-//         console.log(`servidor corriendo en el puerto: 4000`);
-//     }) 
 
     app.listen(process.env.PORT ,()=>{
-        console.log(`servidor corriendo en el puerto: jaja`);
+        console.log('servidor corriendo ene le puerto :',process.env.PORT);
     })  //escucha peticiones desde este puerto
     
+
