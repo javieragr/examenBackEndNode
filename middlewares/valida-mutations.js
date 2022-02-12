@@ -4,8 +4,14 @@ const { validationResult } = require("express-validator");
 
 
 const verifyLetters=(req,resp=response,next)=>{
-   
     const array = req.body.dna;
+    if (array.length==0||array.length<2) {
+        return resp.status(400).json({
+            ok:false,
+            errors:'No es una matriz'
+        })
+    }
+   
     let rowCount=0;
     for (var i = 0; i < array.length; i++) {
         let row = array[i]

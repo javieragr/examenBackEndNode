@@ -8,7 +8,7 @@ const verifyLetters = require('../middlewares/valida-mutations');
 const router = Router();
 
 router.post('/new', [check('name', 'El nombre es obligatorio').not().notEmpty()], respuesta)
-router.post('/addDNA', verifyLetters,addDNA)
+router.post('/mutation', verifyLetters,addDNA)
 //router.post('/addDNA',[], addDNA)
 
 module.exports = router;
