@@ -60,7 +60,7 @@ const addDNA = async(req, resp = response) => {
 const stats = async(req,resp=response)=>{
         try {
 
-            // let adns= await ADN.find({Mutation:true});
+            
             let mutados= await ADN.count({Mutation:true});
             let noMutados= await ADN.count({Mutation:false});
             let adn={count_mutations:mutados,
@@ -68,7 +68,7 @@ const stats = async(req,resp=response)=>{
                 ratio:(((mutados)*100)/(mutados+noMutados)/100).toFixed(2)
             }
             
-            return resp.status(300).json({
+            return resp.status(200).json({
                 ok:true,
                 msg:'Stats',
                 adn:adn
@@ -85,26 +85,9 @@ const stats = async(req,resp=response)=>{
 
 }
 
-const respuesta = async(req, resp = response) => {
-    //  const errors=validationResult(req)
-    try {
-        console.log(req.body.dna)
-        return resp.status(400).json({
-            ok: false,
-            msg: 'EA PRRo'
-        });
-    } catch (error) {
-        console.log(error);
-        return resp.status(500).json({
-            ok: false,
-            msg: 'Hable con el admin'
 
-        })
-    }
-
-}
 module.exports = {
-    respuesta,
+    
     addDNA,
     stats
 

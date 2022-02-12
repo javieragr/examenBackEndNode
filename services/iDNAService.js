@@ -5,6 +5,7 @@ const hasMutation=(arr)=>{
     let mutation=false;
     let mutations=0;
     let same = 0;
+    //Buscamos  mutaciones en diagonal
     //#region cross 
 
         
@@ -87,6 +88,7 @@ const hasMutation=(arr)=>{
         
 //#endregion cross
    
+    //buscamos mutaciones de manera horizontal
     //#region findRight
 
     // var RowLength = arr.length;
@@ -128,6 +130,7 @@ const hasMutation=(arr)=>{
 
     //#endregion
    
+    //Buscamos mutaciones de manera vertical
     //#region findDown
    
     x = arr[0].length;
